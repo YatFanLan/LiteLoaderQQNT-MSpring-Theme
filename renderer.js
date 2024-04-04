@@ -75,7 +75,6 @@ function compareVersions(v1, v2) {
 
 try {
 
-
     // 页面加载完成时触发
     const element = document.createElement("style");
     document.head.appendChild(element);
@@ -138,6 +137,11 @@ try {
         } catch (error) {
             log("[错误]", "赫蹏加载出错", error);
         }
+    }
+
+    // 判断是否强制覆盖自己的气泡颜色
+    if (settings.forceHostBubbleColor) {
+        document.documentElement.classList.add("mspring_force_host_bubble_color");
     }
 
 } catch (error) {
@@ -203,7 +207,7 @@ export const onSettingWindowCreated = async view => {
             mspring_theme.setSettings(settings);
         });
 
-        // 选择id为heti的q-switch
+        // 选择id为heti的setting-switch
         const hetiSwitch = view.querySelector("#heti");
         if (settings.heti) {
             hetiSwitch.setAttribute("is-active", "");
@@ -220,6 +224,29 @@ export const onSettingWindowCreated = async view => {
                 event.currentTarget.setAttribute("is-active", "");
                 // 修改settings的heti值为true
                 settings.heti = true;
+            }
+
+            // 将修改后的settings保存到settings.json
+            mspring_theme.setSettings(settings);
+        });
+
+        // 选择id为force-host-bubble-color的setting-switch
+        const forceHostBubbleColorSwitch = view.querySelector("#force-host-bubble-color");
+        if (settings.forceHostBubbleColor) {
+            forceHostBubbleColorSwitch.setAttribute("is-active", "");
+        }
+        // 给forceHostBubbleColorSwitch添加点击监听
+        forceHostBubbleColorSwitch.addEventListener("click", (event) => {
+            const isActive = event.currentTarget.hasAttribute("is-active");
+
+            if (isActive) {
+                event.currentTarget.removeAttribute("is-active")
+                // 修改settings的forceHostBubbleColor值为false
+                settings.forceHostBubbleColor = false;
+            } else {
+                event.currentTarget.setAttribute("is-active", "");
+                // 修改settings的forceHostBubbleColor值为true
+                settings.forceHostBubbleColor = true;
             }
 
             // 将修改后的settings保存到settings.json

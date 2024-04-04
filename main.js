@@ -170,7 +170,8 @@ if (!fs.existsSync(settingsPath)) {
     fs.writeFileSync(settingsPath, JSON.stringify({
         "themeColor": "#cb82be",
         "backgroundOpacity": "70",
-        "heti": false
+        "heti": false,
+        "forceHostBubbleColor": false,
     }));
 } else {
     // 判断后来加入的backgroundOpacity是否存在，如果不存在则添加
@@ -183,6 +184,11 @@ if (!fs.existsSync(settingsPath)) {
     // 判断后来加入的heti是否存在，如果不存在则添加
     if (!config.heti) {
         config.heti = false;
+        fs.writeFileSync(settingsPath, JSON.stringify(config));
+    }
+    // 判断后来加入的forceHostBubbleColor是否存在，如果不存在则添加
+    if (!config.forceHostBubbleColor) {
+        config.forceHostBubbleColor = false;
         fs.writeFileSync(settingsPath, JSON.stringify(config));
     }
 }

@@ -84,6 +84,13 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     border-radius: 8px;
 }
 
+/* 强制覆盖自己的气泡颜色 */
+html:is(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message .msg-content-container.container--self {
+    background: var(--theme-color) !important;
+    color: var(--on_bubble_host_text) !important;
+    backdrop-filter: none !important;
+}
+
 /* 浅色模式 */
 @media (prefers-color-scheme: light) {
 
@@ -220,7 +227,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart, .title),
     .setting-main .setting-main__content .shortcut-tab .shotcut>*,
     .setting-main .setting-main__content .liteloader setting-panel,
-    #discover .discover__container .discover__content .application-form__container .q-scroll-view form > div > div > div {
+    #discover .discover__container .discover__content .application-form__container .q-scroll-view form>div>div>div {
         background: #00000010;
         border-radius: 8px;
     }
@@ -412,7 +419,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart, .title),
     .setting-main .setting-main__content .shortcut-tab .shotcut>*,
     .setting-main .setting-main__content .liteloader setting-panel,
-    #discover .discover__container .discover__content .application-form__container .q-scroll-view form > div > div > div  {
+    #discover .discover__container .discover__content .application-form__container .q-scroll-view form>div>div>div {
         background: #ffffff21;
         border-radius: 8px;
     }

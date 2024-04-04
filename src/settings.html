@@ -30,6 +30,13 @@
                 <input type="range" value="1" min="0" max="100" step="1"
                     class="q-button q-button--small q-button--secondary pick-opacity" style="width: 61%;" />
             </setting-item>
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>强行覆盖自己发送的气泡颜色</setting-text>
+                    <setting-text data-type="secondary" style="-webkit-line-clamp: initial;margin-right: 8px;">默认情况下不需要开启。如果想要在开启其他修改背景的插件时，让自己的气泡背景显示为主题色，就需要开启该功能 (修改之后重启生效)</setting-text>
+                </div>
+                <setting-switch id="force-host-bubble-color"></setting-switch>
+            </setting-item>
         </setting-list>
     </setting-panel>
 </setting-section>
@@ -41,7 +48,7 @@
                 <div>
                     <setting-text>优化消息排版</setting-text>
                     <setting-text data-type="secondary" style="-webkit-line-clamp: initial;">使用
-                        赫蹏，提供中英文混排美化、标点挤压，修改之后重启生效</setting-text>
+                        赫蹏，提供中英文混排美化、标点挤压 (修改之后重启生效)</setting-text>
                 </div>
                 <setting-switch id="heti"></setting-switch>
             </setting-item>
