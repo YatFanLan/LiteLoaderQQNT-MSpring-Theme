@@ -241,28 +241,24 @@ html.mspring_background_plugin_enabled:not(.mspring_force_host_bubble_color) #ap
         border-radius: 8px;
     }
 
+    #app .q-input:not(.search-input),
+    #app .q-textarea,
+    .q-pulldown-menu-button {
+        border-radius: 8px;
+        background: #00000010;
+    }
+
     /* 登录页面背景 */
     #login canvas {
         display: none;
     }
 
     /* 登录页面输入框 */
-    #login .password-container__input-area .q-input,
     #login .password-container__input-area .password .input,
     #login .password-container__input-area .password .input.focus {
         border-radius: 8px;
         background: #00000010;
     }
-
-    /* 去除VIP红色昵称 */
-    .vip-name {
-        color: initial !important;
-    }
-
-    /* 红包详情背景 */
-    /* .container .lucky-money-popup .lucky-money-dialog .q-popup__body .detail-container {
-        background: #ffffffff;
-    } */
 
     /* 防撤回提示 */
     html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
@@ -433,13 +429,19 @@ html.mspring_background_plugin_enabled:not(.mspring_force_host_bubble_color) #ap
         border-radius: 8px;
     }
 
+    #app .q-input:not(.search-input),
+    #app .q-textarea,
+    .q-pulldown-menu-button {
+        border-radius: 8px;
+        background: #ffffff21;
+    }
+
     /* 登录页面背景 */
     #login canvas {
         display: none;
     }
 
     /* 登录页面输入框 */
-    #login .password-container__input-area .q-input,
     #login .password-container__input-area .password .input,
     #login .password-container__input-area .password .input.focus {
         border-radius: 8px;
@@ -501,16 +503,6 @@ html.mspring_background_plugin_enabled:not(.mspring_force_host_bubble_color) #ap
         text-decoration: underline;
     }
 
-    /* 去除VIP红色昵称 */
-    .vip-name {
-        color: #ffffff !important;
-    }
-
-    /* 红包详情背景 */
-    /* .container .lucky-money-popup .lucky-money-dialog .q-popup__body .detail-container {
-        background: #1b1b1bff;
-    } */
-
     /* 防撤回提示 */
     html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
         background: #ffffff21 !important;
@@ -561,6 +553,7 @@ html.mspring_background_plugin_enabled:not(.mspring_force_host_bubble_color) #ap
     --bubble_guest: #00000010;
     /* --fill_light_primary: TRANSPARENT; */
     --overlay_active_brand: var(--theme-color);
+    --svip_red: var(--text_primary);
     --brand_text: var(--theme-color);
 
     /* ancient-tokens */
@@ -599,6 +592,7 @@ html.mspring_force_host_bubble_color .q-theme-tokens-light {
     --bubble_guest: #ffffff21;
     /* --fill_light_primary: TRANSPARENT; */
     --overlay_active_brand: var(--theme-color);
+    --svip_red: var(--text_primary);
     --brand_text: var(--theme-color);
 
     /* ancient-tokens */
@@ -613,7 +607,7 @@ html.mspring_force_host_bubble_color .q-theme-tokens-light {
     --nt_bg_nav_2_60_2_alpha: var(--background-color-dark);
 }
 
-html:not(.mspring_background_plugin_enabled,.mspring_lite_tool_background_enabled) .q-theme-tokens-dark,
+html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .q-theme-tokens-dark,
 html.mspring_force_host_bubble_color .q-theme-tokens-dark {
     --bubble_host: var(--theme-color);
     --bubble_host_text: var(--on-theme-text-color);
@@ -656,7 +650,8 @@ html.mspring_force_host_bubble_color .q-theme-tokens-dark {
 }
 
 /* 搜索框等点击之后粉线的圆角 */
-.q-input__inner:focus {
+.q-input__inner:focus,
+.q-textarea__inner:focus {
     border-radius: 8px !important;
 }
 
