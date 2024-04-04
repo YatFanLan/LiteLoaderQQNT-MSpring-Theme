@@ -56,6 +56,23 @@ function insertHeti(before) {
     observer.observe(document.body, { childList: true, subtree: true });
 }
 
+function compareVersions(v1, v2) {
+    const parts1 = v1.split('.').map(Number);
+    const parts2 = v2.split('.').map(Number);
+
+    for (let i = 0; i < parts1.length; i++) {
+        if (parts2.length === i) {
+            return 1;
+        }
+
+        if (parts1[i] !== parts2[i]) {
+            return parts1[i] > parts2[i] ? 1 : -1;
+        }
+    }
+
+    return parts1.length === parts2.length ? 0 : -1;
+}
+
 try {
 
 
@@ -216,21 +233,29 @@ export const onSettingWindowCreated = async view => {
         const updateButton = view.querySelector("#mst-settings-go-to-update");
         updateButton.style.display = "none";
 
-        const release_latest_url = `https://github.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/releases/latest`;
-        fetch(release_latest_url).then((res) => {
-            const new_version = res.url.slice(res.url.lastIndexOf("/") + 1).replace("v", "");
-            log("[版本]", "最新版本", new_version);
-            if (new_version > LiteLoader.plugins["mspring_theme"].manifest.version) {
-                updateButton.style.display = "block";
-                updateButton.addEventListener("click", () => {
-                    mspring_theme.openWeb(release_latest_url);
-                });
-                version.innerHTML += ` <span style="color: #ff4d4f;">(有新版本: ${new_version})</span>`;
-            } else {
-                version.innerHTML += ` (已是最新版本)`;
-            }
+        mspring_theme.fetchData("https://api.github.com/repos/MUKAPP/LiteLoaderQQNT-MSpring-Theme/releases/latest")
+            .then((res) => {
+                const response = JSON.parse(res);
+                if (response && response.html_url) {
+                    const new_version = response.html_url.slice(response.html_url.lastIndexOf("/") + 1).replace("v", "");
+                    log("[版本]", "最新版本", new_version);
+                    if (compareVersions(new_version, LiteLoader.plugins["mspring_theme"].manifest.version) > 0) {
+                        updateButton.style.display = "block";
+                        updateButton.addEventListener("click", () => {
+                            mspring_theme.openWeb(response.html_url);
+                        });
+                        version.innerHTML += ` <span style="color: #ff4d4f;">(有新版本: ${new_version})</span>`;
+                    } else {
+                        version.innerHTML += ` (已是最新版本)`;
+                    }
+                } else {
+                    throw new Error('Invalid response from server');
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
 
-        });
 
     } catch (error) {
         log("[设置页面错误]", error);

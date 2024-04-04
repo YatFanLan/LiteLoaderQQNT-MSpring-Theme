@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { BrowserWindow, ipcMain, shell } = require("electron");
+const { BrowserWindow, ipcMain, shell, net } = require("electron");
 
 function log(...args) {
     console.log(`[MSpring Theme]`, ...args);
@@ -8,6 +8,25 @@ function log(...args) {
 
 function openWeb(url) {
     shell.openExternal(url);
+}
+
+function fetchData(url) {
+    return new Promise((resolve, reject) => {
+        const request = net.request(url);
+        request.on("response", response => {
+            let data = "";
+            response.on("data", chunk => {
+                data += chunk;
+            });
+            response.on("end", () => {
+                resolve(data);
+            });
+        });
+        request.on("error", error => {
+            reject(error);
+        });
+        request.end();
+    });
 }
 
 // 防抖函数
@@ -234,6 +253,10 @@ ipcMain.handle("LiteLoader.mspring_theme.logToMain", (event, ...args) => {
     log(...args);
 }
 );
+
+ipcMain.handle("LiteLoader.mspring_theme.fetchData", (event, url) => {
+    return fetchData(url);
+});
 
 // 创建窗口时触发
 module.exports.onBrowserWindowCreated = window => {

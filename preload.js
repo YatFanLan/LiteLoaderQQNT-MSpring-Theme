@@ -21,4 +21,5 @@ contextBridge.exposeInMainWorld("mspring_theme", {
         ...args
     ),
     openWeb: (url) => ipcRenderer.send("LiteLoader.mspring_theme.openWeb", url),
+    fetchData: (url) => ipcRenderer.invoke("LiteLoader.mspring_theme.fetchData", url)
 });
