@@ -85,15 +85,19 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 }
 
 /* 强制覆盖自己的气泡颜色 */
-html:is(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message .msg-content-container.container--self {
+html.mspring_force_host_bubble_color #app .chat-msg-area .ml-list .message .msg-content-container.container--self {
     background: var(--theme-color) !important;
     color: var(--on_bubble_host_text) !important;
     backdrop-filter: none !important;
 }
 
 /* 自己回复消息的文本颜色 */
-html:is(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message .reply-element.reply-element--self {
-    color: var(--on_brand_primary) !important;
+html.mspring_force_host_bubble_color #app .chat-msg-area .ml-list .message .reply-element.reply-element--self {
+    color: var(--on_bubble_host_text) !important;
+}
+
+html.mspring_background_plugin_enabled:not(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message .reply-element.reply-element--self {
+    color: var(--text_primary) !important;
 }
 
 /* 浅色模式 */
@@ -554,15 +558,9 @@ html:is(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message 
     --bg_bottom_standard: var(--background-color-light);
     /* --bg_bottom_light: var(--background-color-light); */
     --bg_nav_secondary: var(--background-color-light);
-    --bubble_host: var(--theme-color);
     --bubble_guest: #00000010;
-    --bubble_host_text: var(--on-theme-text-color);
-    --bubble_host_1: var(--theme-color);
-    --bubble_host_2: var(--theme-color);
     /* --fill_light_primary: TRANSPARENT; */
     --overlay_active_brand: var(--theme-color);
-    --host_bubble_bg_css_value: var(--theme-color);
-    --on_bubble_host_text: var(--on-theme-text-color);
     --brand_text: var(--theme-color);
 
     /* ancient-tokens */
@@ -577,6 +575,16 @@ html:is(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message 
     --nt_bg_nav_2_60_2_alpha: var(--background-color-light);
 }
 
+html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .q-theme-tokens-light,
+html.mspring_force_host_bubble_color .q-theme-tokens-light {
+    --bubble_host: var(--theme-color);
+    --bubble_host_text: var(--on-theme-text-color);
+    --bubble_host_1: var(--theme-color);
+    --bubble_host_2: var(--theme-color);
+    --on_bubble_host_text: var(--on-theme-text-color);
+    --host_bubble_bg_css_value: var(--theme-color);
+}
+
 .q-theme-tokens-dark {
     /* color-tokens */
     --brand_standard: var(--theme-color);
@@ -588,15 +596,9 @@ html:is(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message 
     --bg_bottom_standard: var(--background-color-dark);
     /* --bg_bottom_light: var(--background-color-dark); */
     --bg_nav_secondary: var(--background-color-dark);
-    --bubble_host: var(--theme-color);
     --bubble_guest: #ffffff21;
-    --bubble_host_text: var(--on-theme-text-color);
-    --bubble_host_1: var(--theme-color);
-    --bubble_host_2: var(--theme-color);
     /* --fill_light_primary: TRANSPARENT; */
     --overlay_active_brand: var(--theme-color);
-    --host_bubble_bg_css_value: var(--theme-color);
-    --on_bubble_host_text: var(--on-theme-text-color);
     --brand_text: var(--theme-color);
 
     /* ancient-tokens */
@@ -609,6 +611,16 @@ html:is(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message 
     --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
     --nt_bg_nav_secondary_2_60_2_alpha: var(--background-color-dark);
     --nt_bg_nav_2_60_2_alpha: var(--background-color-dark);
+}
+
+html:not(.mspring_background_plugin_enabled,.mspring_lite_tool_background_enabled) .q-theme-tokens-dark,
+html.mspring_force_host_bubble_color .q-theme-tokens-dark {
+    --bubble_host: var(--theme-color);
+    --bubble_host_text: var(--on-theme-text-color);
+    --bubble_host_1: var(--theme-color);
+    --bubble_host_2: var(--theme-color);
+    --on_bubble_host_text: var(--on-theme-text-color);
+    --host_bubble_bg_css_value: var(--theme-color);
 }
 
 .send-btn-wrap,
