@@ -91,6 +91,11 @@ html:is(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message 
     backdrop-filter: none !important;
 }
 
+/* 自己回复消息的文本颜色 */
+html:is(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message .reply-element.reply-element--self {
+    color: var(--on_brand_primary) !important;
+}
+
 /* 浅色模式 */
 @media (prefers-color-scheme: light) {
 
