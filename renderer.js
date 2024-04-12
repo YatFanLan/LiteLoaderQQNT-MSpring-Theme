@@ -256,7 +256,8 @@ export const onSettingWindowCreated = async view => {
                         version.innerHTML += ` (已是最新版本)`;
                     }
                 } else {
-                    throw new Error('Invalid response from server');
+                    log("版本更新检查失败", response);
+                    version.innerHTML += ` (版本更新检查失败)`;
                 }
             })
             .catch((error) => {
@@ -264,7 +265,8 @@ export const onSettingWindowCreated = async view => {
             });
 
 
-            SettingElementStyleSheets.styleSheets = [...SettingElementStyleSheets.styleSheets, style];
+        // 修改设置页面的样式
+        SettingElementStyleSheets.styleSheets = [...SettingElementStyleSheets.styleSheets, style];
 
     } catch (error) {
         log("[设置页面错误]", error);
