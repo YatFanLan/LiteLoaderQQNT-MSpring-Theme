@@ -118,8 +118,8 @@ html:is(.linux) .container .more-panel .side-panel {
 }
 
 /* 
-        频道 别人消息背景
-        频道 帖子列表项目背景
+    频道 别人消息背景
+    频道 帖子列表项目背景
          */
 .guild-main .message:not(.message-gray-tip, .message-self) .message-content,
 .guild-main .topic-list-item {
@@ -131,8 +131,8 @@ html:is(.linux) .container .more-panel .side-panel {
 }
 
 /* 
-        合并转发的聊天记录
-        文件 */
+    合并转发的聊天记录
+    文件 */
 #ml-root .forward-msg,
 #ml-root .normal-file {
     background-color: var(--msp-container);
@@ -505,6 +505,13 @@ html.mspring_force_host_bubble_color .q-theme-tokens-dark {
 .q-button {
     border-radius: 8px;
 }
+
+/* 群消息表情回应菜单 */
+.q-context-menu .menu-stickers-wrapper,
+.q-context-menu .menu-stickers-wrapper .menu-stickers,
+.menu-stickers-panel {
+    border-radius: 8px !important;
+} 
 
 .guilds-item {
     border-radius: 16px !important;
