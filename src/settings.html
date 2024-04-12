@@ -33,7 +33,9 @@
             <setting-item data-direction="row">
                 <div>
                     <setting-text>强行覆盖自己发送的气泡颜色</setting-text>
-                    <setting-text data-type="secondary" style="-webkit-line-clamp: initial;margin-right: 8px;">默认情况下不需要开启。如果想要在开启其他修改背景的插件时，让自己的气泡背景显示为主题色，就需要开启该功能 (修改之后重启生效)</setting-text>
+                    <setting-text data-type="secondary"
+                        style="-webkit-line-clamp: initial;margin-right: 8px;">默认情况下不需要开启。如果想要在开启其他修改背景的插件时，让自己的气泡背景显示为主题色，就需要开启该功能
+                        (修改之后重启生效)</setting-text>
                 </div>
                 <setting-switch id="force-host-bubble-color"></setting-switch>
             </setting-item>
@@ -72,6 +74,13 @@
                     <setting-text data-type="secondary" id="mst-settings-version">没问题的话这里显示的是版本号</setting-text>
                 </div>
                 <setting-button data-type="primary" id="mst-settings-go-to-update">去更新</setting-button>
+            </setting-item>
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>Telegram 频道</setting-text>
+                    <setting-text data-type="secondary">https://t.me/MUKAPP_Personal</setting-text>
+                </div>
+                <setting-button data-type="secondary" id="msp-tg-channel">进去瞅瞅</setting-button>
             </setting-item>
         </setting-list>
     </setting-panel>

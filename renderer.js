@@ -264,6 +264,11 @@ export const onSettingWindowCreated = async view => {
                 console.error(error);
             });
 
+        // tg 频道
+        const tgChannel = view.querySelector("#msp-tg-channel");
+        tgChannel.addEventListener("click", () => {
+            deepl_plugin.openWeb("https://t.me/MUKAPP_Personal");
+        });
 
         // 修改设置页面的样式
         SettingElementStyleSheets.styleSheets = [...SettingElementStyleSheets.styleSheets, style];
