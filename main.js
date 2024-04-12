@@ -174,9 +174,9 @@ if (!fs.existsSync(settingsPath)) {
         "forceHostBubbleColor": false,
     }));
 } else {
-    // 判断后来加入的backgroundOpacity是否存在，如果不存在则添加
     const data = fs.readFileSync(settingsPath, "utf-8");
     const config = JSON.parse(data);
+    // 判断后来加入的backgroundOpacity是否存在，如果不存在则添加
     if (!config.backgroundOpacity) {
         config.backgroundOpacity = "70";
         fs.writeFileSync(settingsPath, JSON.stringify(config));
