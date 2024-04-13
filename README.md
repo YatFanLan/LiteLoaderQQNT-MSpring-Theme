@@ -21,7 +21,6 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
     - [夜间模式](#夜间模式)
     - [优化消息排版演示](#优化消息排版演示)
   - [安装方法](#安装方法)
-    - [插件商店（推荐）](#插件商店推荐)
     - [手动安装](#手动安装)
   - [插件冲突分析](#插件冲突分析)
   - [其他](#其他)
@@ -65,13 +64,14 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 
 ## 安装方法
 
-### 插件商店（推荐）
+<!-- ### 插件商店（推荐）
 
-在 [插件商店](https://github.com/Night-stars-1/LiteLoaderQQNT-Plugin-Plugin-Store) 内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可
+在 [插件商店]() 内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可 -->
 
 ### 手动安装
 
-将下载的 Zip 文件解压，解压出的文件夹移动至 `LiteLoaderQQNT/plugins/` 内，重启 QQ 即可
+将下载的 Zip 文件解压，解压出的文件夹移动至 `LiteLoaderQQNT/plugins/` 内，重启 QQ 即可\
+（如果解压之后不是一个文件夹，而是几个文件夹和几个文件，那么请创建一个文件夹，将解压出来的文件夹和文件放进去，然后再移动到上述路径内）
 
 ## 插件冲突分析
 
