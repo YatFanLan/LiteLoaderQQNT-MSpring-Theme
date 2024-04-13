@@ -275,6 +275,10 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
         background: #ffffffef !important;
     }
 
+    #ml-root .container--others .ptt-element__button .q-icon {
+        color: #ffffff;
+    }
+
     /* 插件设置 列表里的输入框 */
     .liteloader input[type="text"] {
         border-radius: 8px;
@@ -327,6 +331,10 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     /* 转发消息 折叠列表 头部 */
     .q-dialog .q-collapse-item .q-collapse-item__header {
         background: #303030ef !important;
+    }
+
+    #ml-root .container--others .ptt-element__button .q-icon {
+        color: #171717;
     }
 
     .login-panel,
