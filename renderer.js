@@ -240,28 +240,40 @@ export const onSettingWindowCreated = async view => {
         const updateButton = view.querySelector("#mst-settings-go-to-update");
         updateButton.style.display = "none";
 
-        mspring_theme.fetchData("https://api.github.com/repos/MUKAPP/LiteLoaderQQNT-MSpring-Theme/releases/latest")
-            .then((res) => {
-                const response = JSON.parse(res);
-                if (response && response.html_url) {
-                    const new_version = response.html_url.slice(response.html_url.lastIndexOf("/") + 1).replace("v", "");
+        mspring_theme.fetchData("https://github.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/releases/latest")
+            .then(({ url, content }) => {
+                const versionMatch = content.match(/\/releases\/tag\/v(\d+\.\d+\.\d+)/);
+                const urlMatch = content.match(/https:\/\/github\.com\/[\w-]+\/[\w-]+\/releases\/tag\/v\d+\.\d+\.\d+/);
+                log("urlMatch", urlMatch[0]);
+                if (versionMatch) {
+                    const new_version = versionMatch[1];
                     log("[版本]", "最新版本", new_version);
                     if (compareVersions(new_version, LiteLoader.plugins["mspring_theme"].manifest.version) > 0) {
                         updateButton.style.display = "block";
-                        updateButton.addEventListener("click", () => {
-                            mspring_theme.openWeb(response.html_url);
-                        });
                         version.innerHTML += ` <span style="color: #ff4d4f;">(有新版本: ${new_version})</span>`;
+
+                        // 判断 plugininstaller 插件是否存在并启用
+                        if (LiteLoader.plugins["plugininstaller"] && !LiteLoader.plugins["plugininstaller"].disabled) {
+                            updateButton.addEventListener("click", () => {
+                                plugininstaller.updateBySlug("mspring_theme");
+                            });
+                        } else {
+                            version.innerHTML += "<br>未安装PluginInstaller，安装之后可以一键更新，当前需要手动更新"
+                            updateButton.addEventListener("click", () => {
+                                LiteLoader.api.openExternal(urlMatch[0]);
+                            });
+                        }
                     } else {
                         version.innerHTML += ` (已是最新版本)`;
                     }
                 } else {
-                    log("版本更新检查失败", response);
                     version.innerHTML += ` (版本更新检查失败)`;
+                    log("版本更新检查失败", content);
                 }
             })
             .catch((error) => {
-                console.error(error);
+                version.innerHTML += ` (版本更新检查失败: ${error.message})`;
+                log("版本更新检查失败", error);
             });
 
         // tg 频道
