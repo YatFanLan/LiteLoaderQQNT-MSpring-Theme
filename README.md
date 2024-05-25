@@ -21,6 +21,8 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
     - [夜间模式](#夜间模式)
     - [优化消息排版演示](#优化消息排版演示)
   - [安装方法](#安装方法)
+    - [插件列表查看](#插件列表查看)
+    - [PluginInstaller](#plugininstaller)
     - [手动安装](#手动安装)
   - [插件冲突分析](#插件冲突分析)
   - [其他](#其他)
@@ -64,9 +66,14 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 
 ## 安装方法
 
-<!-- ### 插件商店（推荐）
+### 插件列表查看
 
-在 [插件商店]() 内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可 -->
+安装 [插件列表查看](https://github.com/ltxhhz/LL-plugin-list-viewer) 插件，打开对应设置页面，找到本插件，点击 **安装** - **使用 Release 包**，安装完成之后重启
+
+### PluginInstaller
+
+安装 [PluginInstaller](https://github.com/xinyihl/LiteLoaderQQNT-PluginInstaller) 插件，打开对应设置页面，在安装插件输入框内输入 `https://raw.githubusercontent.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/main/manifest.json`，点击确定按钮\
+或者也可以同时安装 [Protocio](https://github.com/PRO-2684/protocio) 插件，然后点击 [该链接](https://mukapp.github.io/LiteLoaderQQNT-MSpring-Theme/res/protocio-install.html) 直接拉起 PluginInstaller 安装插件
 
 ### 手动安装
 
