@@ -50,16 +50,24 @@ function debounce(fn, time) {
     }
 }
 
-
-// 辅助函数 - 将十六进制颜色值转换为 RGB 值
+/**
+ * 将十六进制颜色值转换为 RGB 值
+ * @param {string} hex 表示十六进制颜色的字符串，例如 "#ff0000"
+ * @returns {Array} 包含 RGB 值的数组，例如 [255, 0, 0]
+ */
 function hexToRGB(hex) {
+    // 分别提取并转换红色、绿色、蓝色的十六进制值到整数
     var r = parseInt(hex.slice(1, 3), 16);
     var g = parseInt(hex.slice(3, 5), 16);
     var b = parseInt(hex.slice(5, 7), 16);
     return [r, g, b];
 }
 
-// 辅助函数 - 将 RGB 值转换为十六进制颜色值
+/**
+ * 将 RGB 值转换为十六进制颜色值
+ * @param {Array} rgb 包含 RGB 值的数组，例如 [255, 0, 0]
+ * @returns {string} 表示十六进制颜色的字符串，例如 "#ff0000"
+ */
 function RGBToHex(rgb) {
     var r = rgb[0].toString(16).padStart(2, '0');
     var g = rgb[1].toString(16).padStart(2, '0');
@@ -67,7 +75,13 @@ function RGBToHex(rgb) {
     return '#' + r + g + b;
 }
 
-// 辅助函数 - 混合两个颜色的 RGB 值
+/**
+ * 混合两个颜色的 RGB 值
+ * @param {Array} color1 第一个颜色的 RGB 值数组
+ * @param {Array} color2 第二个颜色的 RGB 值数组
+ * @param {number} ratio 混合比率，范围在 0 到 1 之间
+ * @returns {Array} 混合后的 RGB 值数组
+ */
 function blendColors(color1, color2, ratio) {
     var blendedColor = [];
     for (var i = 0; i < 3; i++) {
@@ -76,35 +90,30 @@ function blendColors(color1, color2, ratio) {
     return blendedColor;
 }
 
-// 辅助函数 - 获取最佳的文本颜色
-function getBestTextColor(bgColor) {
-    if (!bgColor) {
-        // 如果没有提供背景色，返回黑色
-        return 'black';
-    }
+/**
+ * 计算给定RGB颜色的亮度
+ * @param {number} r - 红色通道的值（0-255）
+ * @param {number} g - 绿色通道的值（0-255）
+ * @param {number} b - 蓝色通道的值（0-255）
+ * @returns {number} - 该颜色的亮度值
+ */
+function luminance(r, g, b) {
+    const a = [r, g, b].map(function (v) {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+}
 
-    // 如果背景色是在rgb形式，将其转化为hex
-    if (bgColor.indexOf('rgb') === 0) {
-        bgColor = bgColor.replace('rgb(', '').replace(')', '').split(',').map(Number);
-        bgColor = ((bgColor[0] << 16) | (bgColor[1] << 8) | bgColor[2]).toString(16);
-    }
-
-    // 如果背景色是在hex形式，将其转化为rgb
-    if (bgColor.indexOf('#') === 0) {
-        bgColor = bgColor.slice(1);
-        if (bgColor.length === 3) {
-            bgColor = bgColor[0] + bgColor[0] + bgColor[1] + bgColor[1] + bgColor[2] + bgColor[2];
-        }
-        var r = parseInt(bgColor.slice(0, 2), 16);
-        var g = parseInt(bgColor.slice(2, 4), 16);
-        var b = parseInt(bgColor.slice(4, 6), 16);
-    }
-
-    // 计算背景色的亮度
-    var brightness = (r * 299 + g * 587 + b * 114) / 1000;
-
-    // 如果背景色足够亮，返回黑色，否则返回白色
-    return brightness > 155 ? 'black' : 'white';
+/**
+ * 根据背景颜色的十六进制值判断最佳文字颜色（黑色或白色）
+ * @param {string} hexColor - 十六进制表示的背景颜色，如 "#FFFFFF"
+ * @returns {string} - 最佳文字颜色，'black' 或 'white'
+ */
+function getBestTextColor(hexColor) {
+    const [r, g, b] = hexToRGB(hexColor);
+    const lum = luminance(r, g, b);
+    return lum > 0.5 ? 'black' : 'white';
 }
 
 
