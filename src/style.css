@@ -222,6 +222,13 @@ html:is(.linux) .account-list {
     background: var(--msp-container);
 }
 
+/* 删除QQ主题的背景 */
+.q-miracle-background {
+    background: none !important; /* 删除所有背景图像和背景颜色 */
+    background-color: transparent !important; /* 确保背景颜色透明 */
+}
+
+
 /* 防撤回提示 */
 html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
     background: var(--msp-container) !important;
