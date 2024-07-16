@@ -224,8 +224,7 @@ html:is(.linux) .account-list {
 
 /* 删除QQ主题的背景 */
 .q-miracle-background {
-    background: none !important; /* 删除所有背景图像和背景颜色 */
-    background-color: transparent !important; /* 确保背景颜色透明 */
+    background: none !important;
 }
 
 
@@ -437,6 +436,9 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     /* --fill_light_primary: TRANSPARENT; */
     --overlay_active_brand: var(--theme-color);
     --svip_red: var(--text_primary);
+    /* 管理员标签 */
+    --tag_blue_text: var(--theme-color);
+    --tag_blue_bg: var(--theme-color-alpha);
     --brand_text: var(--theme-color);
 
     /* ancient-tokens */
@@ -480,6 +482,9 @@ html.mspring_force_host_bubble_color .q-theme-tokens-light {
     /* --fill_light_primary: TRANSPARENT; */
     --overlay_active_brand: var(--theme-color);
     --svip_red: var(--text_primary);
+    /* 管理员标签 */
+    --tag_blue_text: var(--theme-color);
+    --tag_blue_bg: var(--theme-color-alpha);
     --brand_text: var(--theme-color);
 
     /* ancient-tokens */
@@ -526,7 +531,7 @@ html.mspring_force_host_bubble_color .q-theme-tokens-dark {
 .q-context-menu .menu-stickers-wrapper .menu-stickers,
 .menu-stickers-panel {
     border-radius: 8px !important;
-} 
+}
 
 .guilds-item {
     border-radius: 16px !important;
