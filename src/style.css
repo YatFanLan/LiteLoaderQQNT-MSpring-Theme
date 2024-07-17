@@ -252,6 +252,11 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
         background: var(--background-color-light);
     }
 
+    /* 登录背景 */
+    #login {
+        background: var(--background-color-light) !important;
+    }
+
     /* 聊天界面回顶、回底按钮 */
     .container .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
         background: #ffffff7f;
