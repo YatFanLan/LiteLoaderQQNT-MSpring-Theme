@@ -11,6 +11,9 @@
 
 MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal) 
 
+> [!WARNING]  
+> 该插件目前处于缓慢维护状态，短期内可能不会添加新功能，主要维持其正常运行
+
 ## 目录
 
 - [LiteLoaderQQNT-MSpring-Theme](#liteloaderqqnt-mspring-theme)
