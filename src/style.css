@@ -502,6 +502,10 @@ html.mspring_force_host_bubble_color .q-theme-tokens-light {
     --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
     --nt_bg_nav_secondary_2_60_2_alpha: var(--background-color-dark);
     --nt_bg_nav_2_60_2_alpha: var(--background-color-dark);
+    
+    /* 解决深色模式下聊天列表置顶项目选中背景失效 */
+    /* 暂未发现其他冲突 */
+    --nt_on_brand_primary_2_5_2_alpha: var(--theme-color)
 }
 
 html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .q-theme-tokens-dark,
