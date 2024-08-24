@@ -182,7 +182,7 @@ html:is(.linux) .account-list {
     文件管理 类型 图片与视频 块
     文件管理 类型 图片与视频 标题
     群文件 群在线文档卡片
-    设置 列表项卡片
+    设置 列表项卡片 (.group-msg-title: 消息通知-群消息设置)
     设置 消息通知 列表项卡片 消息组
     设置 存储管理 列表项卡片
     设置 快捷键 列表项卡片
@@ -193,7 +193,7 @@ html:is(.linux) .account-list {
 #file-area-container .file-area-container-list .file-list-grid-scroll-container>div,
 #file-area-container .file-list-normal-sort-title,
 #file-manage-scroll-list .group-file-banner,
-.setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
+.setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut, .group-msg-title),
 .setting-main__content .notify-tab .popup>*:not(.setting-item-title),
 .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart, .title),
 .setting-main .setting-main__content .shortcut-tab .shotcut>*,
@@ -502,7 +502,7 @@ html.mspring_force_host_bubble_color .q-theme-tokens-light {
     --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
     --nt_bg_nav_secondary_2_60_2_alpha: var(--background-color-dark);
     --nt_bg_nav_2_60_2_alpha: var(--background-color-dark);
-    
+
     /* 解决深色模式下聊天列表置顶项目选中背景失效 */
     /* 暂未发现其他冲突 */
     --nt_on_brand_primary_2_5_2_alpha: var(--theme-color)
