@@ -86,6 +86,8 @@ try {
 
     mspring_theme.rendererReady();
 
+    const settings = await mspring_theme.getSettings();
+
     // 判断操作系统类型
     var osType = "";
     if (LiteLoader.os.platform === "win32") {
@@ -97,21 +99,29 @@ try {
     }
     document.documentElement.classList.add(osType);
 
+    // 判断是否强制覆盖自己的气泡颜色
+    if (settings.forceHostBubbleColor) {
+        document.documentElement.classList.add("mspring_force_host_bubble_color");
+    }
+
     // 判断插件background_plugin是否存在且启用
     if (LiteLoader.plugins["background_plugin"] && !LiteLoader.plugins["background_plugin"].disabled) {
         log("[检测]", "已启用背景插件");
-        document.documentElement.classList.add(`mspring_background_plugin_enabled`);
+        document.documentElement.classList.add("mspring_background_plugin_enabled");
     }
 
     // 判断插件lite_tools是否存在且启用
     if (LiteLoader.plugins["lite_tools"] && !LiteLoader.plugins["lite_tools"].disabled) {
         log("[检测]", "已启用轻量工具箱");
         const ltOptions = await lite_tools.getOptions();
-        if (ltOptions.background.enabled) {
-            log("[检测]", "已启用轻量工具箱-自定义背景");
-            document.documentElement.classList.add(`mspring_lite_tool_background_enabled`);
+        if (ltOptions && ltOptions.background) {
+            if (ltOptions.background.enabled) {
+                log("[检测]", "已启用轻量工具箱-自定义背景");
+                document.documentElement.classList.add("mspring_lite_tool_background_enabled");
+            }
         }
     }
+    log(document.documentElement.classList);
 
     let more_materials_enabled = LiteLoader.plugins["more_materials"] && !LiteLoader.plugins["more_materials"].disabled;
 
@@ -130,7 +140,6 @@ try {
     }
 
     // 判断是否开启heti
-    const settings = await mspring_theme.getSettings();
     if (settings.heti) {
         log("[设置]", "开启赫蹏");
         try {
@@ -138,11 +147,6 @@ try {
         } catch (error) {
             log("[错误]", "赫蹏加载出错", error);
         }
-    }
-
-    // 判断是否强制覆盖自己的气泡颜色
-    if (settings.forceHostBubbleColor) {
-        document.documentElement.classList.add("mspring_force_host_bubble_color");
     }
 
 } catch (error) {
