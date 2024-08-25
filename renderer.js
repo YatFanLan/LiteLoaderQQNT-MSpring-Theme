@@ -113,7 +113,8 @@ try {
     // 判断插件lite_tools是否存在且启用
     if (LiteLoader.plugins["lite_tools"] && !LiteLoader.plugins["lite_tools"].disabled) {
         log("[检测]", "已启用轻量工具箱");
-        const ltOptions = await lite_tools.getOptions();
+        const ltData = await mspring_theme.readFile(LiteLoader.plugins["lite_tools"].path.data+"/config.json");
+        const ltOptions = JSON.parse(ltData);
         if (ltOptions && ltOptions.background) {
             if (ltOptions.background.enabled) {
                 log("[检测]", "已启用轻量工具箱-自定义背景");

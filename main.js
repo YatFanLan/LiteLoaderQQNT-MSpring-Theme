@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { BrowserWindow, ipcMain, shell, net } = require("electron");
+const { BrowserWindow, ipcMain, shell, net, systemPreferences } = require("electron");
 
 function log(...args) {
     console.log(`[MSpring Theme]`, ...args);
@@ -281,6 +281,10 @@ ipcMain.handle("LiteLoader.mspring_theme.logToMain", (event, ...args) => {
 
 ipcMain.handle("LiteLoader.mspring_theme.fetchData", (event, url) => {
     return fetchData(url);
+});
+
+ipcMain.handle("LiteLoader.mspring_theme.readFile", (event, filePath) => {
+    return fs.readFileSync(filePath, "utf-8");
 });
 
 // 创建窗口时触发
