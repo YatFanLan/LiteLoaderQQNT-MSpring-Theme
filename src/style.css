@@ -158,6 +158,11 @@ html:is(.linux) .container .more-panel .side-panel {
     margin-right: 8px;
 }
 
+/* 搜索结果背景色 */
+.bg-color-counts-1 {
+    --side-list-bg: var(--bg_bottom_light) !important;
+}
+
 html:is(.linux) .search-result {
     backdrop-filter: none !important;
     mix-blend-mode: initial !important;

@@ -140,10 +140,10 @@
     --bg_top_standard: #262626ff;
     --bg_top_light: #303030ff;
     --bg_nav_secondary: #1b1b1bff;
-    --bubble_host: #262626ff;
+    --bubble_host: #666666ff;
     --bubble_guest: #262626ff;
     --bubble_host_text: #f2f2f2;
-    --on_bubble_host_text: #f2f2f2ff;
+    --on_bubble_host_text: #ffffffff;
     --bubble_guest_text: #f2f2f2ff;
     --bubble_host_1: #262626ff;
     --bubble_host_2: #262626ff;
@@ -214,8 +214,8 @@
 
 /* mix-tokens */
 .q-theme-tokens-light {
-    --nt_brand_standard_2_overlay_hover_brand_2_mix: #008debff;
-    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #0080d6ff;
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: #bb78afff;
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #aa6d9fff;
     --nt_feedback_error_2_overlay_hover_brand_2_mix: #e4462cff;
     --nt_feedback_error_2_overlay_pressed_brand_2_mix: #cf4028ff;
     --nt_icon_white_2_overlay_hover_2_mix: #f5f5f5ff;
@@ -224,8 +224,8 @@
     --nt_bg_top_light_2_overlay_pressed_2_mix: #e0e0e0ff;
     --nt_icon_secondary_02_2_0_2_alpha: rgba(204, 204, 204, 0);
     --nt_icon_secondary_02_2_70_2_alpha: rgba(204, 204, 204, 0.7);
-    --nt_text_link_2_50_2_alpha: rgba(45, 119, 229, 0.5);
-    --nt_bubble_host_2_overlay_pressed_brand_2_mix: #0080d6ff;
+    --nt_text_link_2_50_2_alpha: rgba(203, 130, 190, 0.5);
+    --nt_bubble_host_2_overlay_pressed_brand_2_mix: #aa6d9fff;
     --nt_bg_white_2_overlay_pressed_brand_2_mix: #d6d6d6ff;
     --nt_bg_white_2_overlay_hover_2_mix: #f5f5f5ff;
     --nt_bg_white_2_overlay_pressed_2_mix: #e0e0e0ff;
@@ -235,7 +235,7 @@
     --nt_icon_red_2_overlay_pressed_2_mix: #e02d48ff;
     --nt_fg_grey_standard_2_overlay_hover_2_mix: #0000003b;
     --nt_fg_grey_standard_2_overlay_pressed_2_mix: #0000004c;
-    --nt_bubble_guest_2_overlay_pressed_2_mix: #e0e0e0ff;
+    --nt_bubble_guest_2_overlay_pressed_2_mix: #0000002d;
     --nt_icon_primary_2_20_2_alpha: rgba(0, 0, 0, 0.2);
     --nt_bg_grey_standard_2_95_2_alpha: rgba(242, 242, 242, 0.95);
     --nt_tag_red_2_20_2_alpha: rgba(255, 134, 46, 0.2);
@@ -243,34 +243,43 @@
     --nt_tag_blue_2_20_2_alpha: rgba(0, 153, 255, 0.2);
     --nt_tag_blue_2_25_2_alpha: rgba(0, 153, 255, 0.25);
     --nt_tag_blue_2_10_2_alpha: rgba(0, 153, 255, 0.1);
-    --nt_brand_standard_2_20_2_alpha: rgba(0, 153, 255, 0.2);
+    --nt_brand_standard_2_20_2_alpha: rgba(203, 130, 190, 0.2);
     --nt_feedback_error_2_20_2_alpha: rgba(247, 76, 48, 0.2);
     --nt_text_white_2_60_2_alpha: rgba(255, 255, 255, 0.6);
     --nt_bg_white_2_70_2_alpha: rgba(255, 255, 255, 0.7);
     --nt_bg_white_2_90_2_alpha: rgba(255, 255, 255, 0.9);
     --nt_bg_white_2_97_2_alpha: rgba(255, 255, 255, 0.97);
+    --nt_bg_white_2_50_2_alpha: rgba(255, 255, 255, 0.5);
     --nt_bg_white_2_40_2_alpha: rgba(255, 255, 255, 0.4);
     --nt_bg_white_2_30_2_alpha: rgba(255, 255, 255, 0.3);
     --nt_text_white_2_80_2_alpha: rgba(255, 255, 255, 0.8);
-    --nt_brand_standard_2_50_2_alpha: rgba(0, 153, 255, 0.5);
+    --nt_brand_standard_2_50_2_alpha: rgba(203, 130, 190, 0.5);
     --nt_bg_nav_secondary_2_60_2_alpha: rgba(255, 255, 255, 0.6);
-    --nt_bg_nav_2_60_2_alpha: rgba(242, 242, 242, 0.6);
+    --nt_bg_nav_2_60_2_alpha: rgba(255, 255, 255, 0.6);
     --nt_feedback_error_2_10_2_alpha: rgba(247, 76, 48, 0.1);
-    --nt_brand_standard_2_10_2_alpha: rgba(0, 153, 255, 0.1);
+    --nt_brand_standard_2_10_2_alpha: rgba(203, 130, 190, 0.1);
     --nt_on_brand_primary_2_40_2_alpha: rgba(255, 255, 255, 0.4);
     --nt_text_primary_2_72_2_alpha: rgba(0, 0, 0, 0.72);
     --nt_text_white_2_72_2_alpha: rgba(255, 255, 255, 0.72);
     --nt_fill_standard_primary_2_4_2_alpha: rgba(0, 0, 0, 0.04);
     --nt_brand_light_2_20_2_alpha: rgba(0, 153, 255, 0.2);
-    --nt_host_bubble_bg_css_value_2_40_2_alpha: rgba(0, 153, 255, 0.4);
+    --nt_host_bubble_bg_css_value_2_40_2_alpha: rgba(203, 130, 190, 0.4);
     --nt_brand_light_2_40_2_alpha: rgba(0, 153, 255, 0.4);
     --nt_icon_white_2_20_2_alpha: rgba(255, 255, 255, 0.2);
+    --nt_text_link_2_overlay_hover_2_mix: #c37db7ff;
+    --nt_text_link_2_overlay_pressed_2_mix: #b272a7ff;
+    --nt_on_brand_primary_2_5_2_alpha: rgba(255, 255, 255, 0.05);
+    --nt_on_brand_primary_2_8_2_alpha: rgba(255, 255, 255, 0.08);
+    --nt_icon_secondary_02_2_80_2_alpha: rgba(204, 204, 204, 0.8);
+    --nt_blur_bottom_superlight_2_30_2_alpha: rgba(255, 255, 255, 0.3);
+    --nt_fill_standard_secondary_2_8_2_alpha: rgba(0, 0, 0, 0.08);
+    --nt_overlay_active_brand_2_40_2_alpha: rgba(203, 130, 190, 0.4);
 
 }
 
 .q-theme-tokens-dark {
-    --nt_brand_standard_2_overlay_hover_brand_2_mix: #1472d0ff;
-    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #0056abff;
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: #cf8cc3ff;
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #aa6d9fff;
     --nt_feedback_error_2_overlay_hover_brand_2_mix: #f85a40ff;
     --nt_feedback_error_2_overlay_pressed_brand_2_mix: #cf4028ff;
     --nt_icon_white_2_overlay_hover_2_mix: #ffffffff;
@@ -279,8 +288,8 @@
     --nt_bg_top_light_2_overlay_pressed_2_mix: #282828ff;
     --nt_icon_secondary_02_2_0_2_alpha: rgba(77, 77, 77, 0);
     --nt_icon_secondary_02_2_70_2_alpha: rgba(77, 77, 77, 0.7);
-    --nt_text_link_2_50_2_alpha: rgba(45, 119, 229, 0.5);
-    --nt_bubble_host_2_overlay_pressed_brand_2_mix: #202020ff;
+    --nt_text_link_2_50_2_alpha: rgba(203, 130, 190, 0.5);
+    --nt_bubble_host_2_overlay_pressed_brand_2_mix: #aa6d9fff;
     --nt_bg_white_2_overlay_pressed_brand_2_mix: #202020ff;
     --nt_bg_white_2_overlay_hover_2_mix: #373737ff;
     --nt_bg_white_2_overlay_pressed_2_mix: #202020ff;
@@ -290,7 +299,7 @@
     --nt_icon_red_2_overlay_pressed_2_mix: #d62b45ff;
     --nt_fg_grey_standard_2_overlay_hover_2_mix: #ffffff43;
     --nt_fg_grey_standard_2_overlay_pressed_2_mix: #82828254;
-    --nt_bubble_guest_2_overlay_pressed_2_mix: #202020ff;
+    --nt_bubble_guest_2_overlay_pressed_2_mix: #67676745;
     --nt_icon_primary_2_20_2_alpha: rgba(255, 255, 255, 0.2);
     --nt_bg_grey_standard_2_95_2_alpha: rgba(26, 26, 26, 0.95);
     --nt_tag_red_2_20_2_alpha: rgba(255, 134, 46, 0.2);
@@ -298,28 +307,37 @@
     --nt_tag_blue_2_20_2_alpha: rgba(0, 153, 255, 0.2);
     --nt_tag_blue_2_25_2_alpha: rgba(0, 153, 255, 0.25);
     --nt_tag_blue_2_10_2_alpha: rgba(0, 153, 255, 0.1);
-    --nt_brand_standard_2_20_2_alpha: rgba(0, 102, 204, 0.2);
+    --nt_brand_standard_2_20_2_alpha: rgba(203, 130, 190, 0.2);
     --nt_feedback_error_2_20_2_alpha: rgba(247, 76, 48, 0.2);
     --nt_text_white_2_60_2_alpha: rgba(255, 255, 255, 0.6);
     --nt_bg_white_2_70_2_alpha: rgba(38, 38, 38, 0.7);
     --nt_bg_white_2_90_2_alpha: rgba(38, 38, 38, 0.9);
     --nt_bg_white_2_97_2_alpha: rgba(38, 38, 38, 0.97);
+    --nt_bg_white_2_50_2_alpha: rgba(38, 38, 38, 0.5);
     --nt_bg_white_2_40_2_alpha: rgba(38, 38, 38, 0.4);
     --nt_bg_white_2_30_2_alpha: rgba(38, 38, 38, 0.3);
     --nt_text_white_2_80_2_alpha: rgba(255, 255, 255, 0.8);
-    --nt_brand_standard_2_50_2_alpha: rgba(0, 102, 204, 0.5);
-    --nt_bg_nav_secondary_2_60_2_alpha: rgba(27, 27, 27, 0.6);
-    --nt_bg_nav_2_60_2_alpha: rgba(17, 17, 17, 0.6);
+    --nt_brand_standard_2_50_2_alpha: rgba(203, 130, 190, 0.5);
+    --nt_bg_nav_secondary_2_60_2_alpha: rgba(23, 23, 23, 0.6);
+    --nt_bg_nav_2_60_2_alpha: rgba(23, 23, 23, 0.6);
     --nt_feedback_error_2_10_2_alpha: rgba(247, 76, 48, 0.1);
-    --nt_brand_standard_2_10_2_alpha: rgba(0, 102, 204, 0.1);
+    --nt_brand_standard_2_10_2_alpha: rgba(203, 130, 190, 0.1);
     --nt_on_brand_primary_2_40_2_alpha: rgba(255, 255, 255, 0.4);
     --nt_text_primary_2_72_2_alpha: rgba(255, 255, 255, 0.72);
     --nt_text_white_2_72_2_alpha: rgba(255, 255, 255, 0.72);
     --nt_fill_standard_primary_2_4_2_alpha: rgba(255, 255, 255, 0.04);
     --nt_brand_light_2_20_2_alpha: rgba(0, 102, 204, 0.2);
-    --nt_host_bubble_bg_css_value_2_40_2_alpha: rgba(38, 38, 38, 0.4);
+    --nt_host_bubble_bg_css_value_2_40_2_alpha: rgba(203, 130, 190, 0.4);
     --nt_brand_light_2_40_2_alpha: rgba(0, 102, 204, 0.4);
     --nt_icon_white_2_20_2_alpha: rgba(255, 255, 255, 0.2);
+    --nt_text_link_2_overlay_hover_2_mix: #cf8cc3ff;
+    --nt_text_link_2_overlay_pressed_2_mix: #aa6d9fff;
+    --nt_on_brand_primary_2_5_2_alpha: rgba(255, 255, 255, 0.05);
+    --nt_on_brand_primary_2_8_2_alpha: rgba(255, 255, 255, 0.08);
+    --nt_icon_secondary_02_2_80_2_alpha: rgba(77, 77, 77, 0.8);
+    --nt_blur_bottom_superlight_2_30_2_alpha: rgba(0, 0, 0, 0.3);
+    --nt_fill_standard_secondary_2_8_2_alpha: rgba(255, 255, 255, 0.08);
+    --nt_overlay_active_brand_2_40_2_alpha: rgba(203, 130, 190, 0.4);
 
 }
 
@@ -531,5 +549,31 @@
     --background_dialogue: #292929;
     --sidebar_win: rgba(0, 0, 0, 0.8);
     --sidebar_mac: rgba(0, 0, 0, 0.1);
+
+}
+
+/* blend-tokens */
+:root {
+    --blend_brightness_white_004: 1.04;
+    --blend_brightness_white_008: 1.08;
+    --blend_brightness_white_010: 1.10;
+    --blend_brightness_white_016: 1.16;
+    --blend_brightness_white_020: 1.20;
+    --blend_brightness_black_004: 0.96;
+    --blend_brightness_black_008: 0.92;
+    --blend_brightness_black_010: 0.90;
+    --blend_brightness_black_016: 0.84;
+    --blend_brightness_black_020: 0.80;
+    --blend_white_004: rgba(255, 255, 255, 0.04);
+    --blend_white_008: rgba(255, 255, 255, 0.08);
+    --blend_white_010: rgba(255, 255, 255, 0.10);
+    --blend_white_016: rgba(255, 255, 255, 0.16);
+    --blend_white_020: rgba(255, 255, 255, 0.20);
+    --blend_black_004: rgba(0, 0, 0, 0.04);
+    --blend_black_008: rgba(0, 0, 0, 0.08);
+    --blend_black_010: rgba(0, 0, 0, 0.10);
+    --blend_black_016: rgba(0, 0, 0, 0.16);
+    --blend_black_020: rgba(0, 0, 0, 0.20);
+    --blend_transparent: rgba(0, 0, 0, 0);
 
 }
